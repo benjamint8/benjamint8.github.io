@@ -1,8 +1,8 @@
 ---
 permalink: /about/
-title: "About"
+title: "About Me"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+Hello! I'm Benjamin, an incoming doctoral candidate in mechanical engineering with an urban science concentration at New York University. I have research experience covering a number of topics, including walkability, renewable energy integration, and fluid dynamics. (Please see the [Projects](https://benjamint8.github.io/projects/) page for more information about these topics and more.) My career objective is to integrate these experiences with local efforts to advance climate resilience and emissions reduction through equitable, accessibility-focused urban form adaptations.
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+Relationally speaking, I'm the son of [Dr. James Tarver](https://www.linkedin.com/in/james-t-9b441b5/) and [Dr. Laurie Issel-Tarver](https://www.linkedin.com/in/laurie-issel-tarver-166a019/), brother of [Kathryn Tarver](https://www.linkedin.com/in/kathryn-tarver/), number one fan of [Julia Lee](https://www.linkedin.com/in/julialee123/), and occasional treat provider to [Toby](https://www.instagram.com/p/CQNY1zPjn_T). If you would like to get in touch, please feel free to contact me via [email](mailto:benjamin.tarver@nyu.edu).
