@@ -102,6 +102,7 @@ permalink: /
 </style>
 
 <header>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <p class="tagline">
       Hello! If you would like to read a brief summary about me, please click <a href="/about">here</a>. If you would like to see a PDF version of my CV, please click <a href="/assets/documents/btarver-cv-29012026.pdf">here</a>.
     </p>
@@ -114,7 +115,7 @@ permalink: /
 
 <div class="cv-section" id="education">
   <h2 class="cv-header" onclick="toggleSection('education')">Education <span class="toggle-icon">−</span></h2>
-  
+
   <div class="cv-content">
     <div class="cv-card">
         <h3>New York University (NYU)</h3>
@@ -254,7 +255,7 @@ permalink: /
         const section = document.getElementById(id);
         const content = section.querySelector('.cv-content');
         const icon = section.querySelector('.toggle-icon');
-        
+
         if (content.classList.contains('collapsed')) {
             content.classList.remove('collapsed');
             icon.innerText = '−';
