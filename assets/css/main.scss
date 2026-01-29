@@ -1,0 +1,177 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// 1. Import Fonts (Strata: Outfit for base/heading, DM Mono for code)
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Outfit:wght@400;500&display=swap');
+
+// 2. Variable Overrides (Must be before importing the theme)
+
+// Typography
+$global-font-family: "Outfit", ui-sans-serif, system-ui, sans-serif !default;
+$header-font-family: "Outfit", ui-sans-serif, system-ui, sans-serif !default;
+$caption-font-family: "Outfit", ui-sans-serif, system-ui, sans-serif !default;
+$code-font-family: "DM Mono", ui-monospace, monospace !default;
+
+// Colors (Strata Palette)
+$background-color: #E9EEF5 !default;        // Strata 'background'
+$text-color: #22324A !default;              // Strata 'foreground' / 'neutral-800'
+$muted-text-color: #6A7A93 !default;        // Strata 'muted-foreground'
+$primary-color: #2F6BFF !default;           // Strata 'primary-500' / 'ring'
+$border-color: #F2F2F2 !default;            // Strata 'border'
+$code-background-color: #E2E8F2 !default;   // Strata 'secondary' / 'neutral-200'
+$link-color: #2F6BFF !default;              // Strata 'primary-500'
+
+// Component-specific variable maps (Minimal Mistakes specific)
+$masthead-link-color: #22324A !default;
+$masthead-link-color-hover: #2F6BFF !default;
+$navicon-link-color-hover: #2F6BFF !default;
+$sidebar-color: #E5EBF4 !default;           // Strata 'sidebar'
+
+// 3. Import Theme
+@import "minimal-mistakes";
+
+// 4. Custom CSS / Neumorphic Overrides (Strata Design System)
+
+// Base Body
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+// Strata Shadows & Utilities
+@mixin strata-shadow-sm {
+  box-shadow: 8px 8px 16px rgba(163,177,198,0.45), -8px -8px 16px rgba(255,255,255,0.90);
+}
+
+@mixin strata-shadow-md {
+  box-shadow: 12px 12px 24px rgba(163,177,198,0.50), -12px -12px 24px rgba(255,255,255,0.92);
+}
+
+@mixin strata-shadow-inset {
+  box-shadow: inset 6px 6px 12px rgba(163,177,198,0.50), inset -6px -6px 12px rgba(255,255,255,0.88);
+}
+
+// Sidebar (Author Profile)
+.author__urls.social-icons .svg-inline--fa,
+.author__urls.social-icons .fab,
+.author__urls.social-icons .fas {
+    color: $primary-color; // Strata Icons
+}
+
+.sidebar {
+    background-color: #E5EBF4; // Strata 'sidebar'
+    border-radius: 1rem;       // Strata 'radius'
+    // Usually sidebar in MM is transparent, let's card-ify it slightly if needed,
+    // or just let the content pop.
+    // For Strata, we want soft containers.
+}
+
+.sidebar .author__avatar img {
+    border-radius: 1rem; // Strata radius
+    @include strata-shadow-sm;
+}
+
+// Buttons (.btn)
+.btn {
+    border-radius: 1rem !important; // Strata 'radius'
+    border: 1px solid #F2F2F2 !important; // Strata 'border'
+    font-weight: 500;
+    transition: all 150ms ease-in-out; // Strata 'transition-fast'
+    
+    // Default Button (Primary)
+    &.btn--primary, &.btn--info, &.btn--success, &.btn--warning, &.btn--danger {
+        background-color: #2F6BFF !important; // Strata 'primary'
+        // Note: Strata button default is technically lighter with gradient, but MM uses primary for solid buttons.
+        // Let's approximate Strata's "Default" button style which is actually white/gradient in the spec?
+        // Wait, spec says default button is: 
+        // bg: var(principles.primary) -> #FFFFFF
+        // bg-image: linear-gradient(...)
+        // color: primary-foreground -> #22324A
+        
+        // Let's override .btn--primary to match Strata's "Default" button exactly.
+        background: #FFFFFF !important;
+        background-image: linear-gradient(145deg, #FFFFFF 0%, #E8EEF8 100%) !important;
+        color: #22324A !important; // Strata primary-foreground
+        @include strata-shadow-sm;
+        
+        &:hover {
+            filter: brightness(1.01);
+            @include strata-shadow-md;
+            color: #2F6BFF !important; // Adding color shift for visibility
+        }
+        
+        &:active {
+            @include strata-shadow-inset;
+            transform: translateY(1px);
+        }
+    }
+
+    // Inverse/Light buttons (if any)
+    &.btn--inverse {
+         background-color: #E2E8F2 !important;
+         color: #22324A !important;
+         @include strata-shadow-sm;
+    }
+}
+
+// Cards / Archive Items
+.archive__item-teaser {
+    border-radius: 1rem;
+    @include strata-shadow-sm;
+}
+
+.archive__item {
+    background-color: #EEF3FA; // Strata 'card'
+    padding: 1.5rem;
+    border-radius: 1rem;
+    @include strata-shadow-sm;
+    margin-bottom: 2rem;
+    border: 1px solid #F2F2F2;
+}
+
+// Inputs (Search, etc)
+input[type="text"], input[type="search"], textarea {
+    background-color: #F2F2F2 !important; // Strata 'input'
+    border-radius: 1rem !important;
+    border: 1px solid transparent !important;
+    box-shadow: inset 2px 2px 4px rgba(163,177,198,0.45), inset -2px -2px 4px rgba(255,255,255,0.85) !important; // Strata shadow-inset-xs
+    color: #22324A !important;
+    padding: 0.5rem 1rem !important;
+    
+    &:focus {
+         border-color: #2F6BFF !important;
+         outline: none;
+    }
+}
+
+// Navigation / Masthead
+.masthead {
+    background-color: #E9EEF5; // Match body
+    border-bottom: 1px solid #F2F2F2;
+    @include strata-shadow-sm;
+}
+
+// Popmelt Badge
+#popmelt-badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  background: linear-gradient(145deg, #FFFFFF 0%, #E8EEF8 100%);
+  padding: 8px 12px;
+  border-radius: 1rem;
+  box-shadow: 8px 8px 16px rgba(163,177,198,0.45), -8px -8px 16px rgba(255,255,255,0.90);
+  text-decoration: none;
+  color: #22324A;
+  font-weight: 500;
+  border: 1px solid #F2F2F2;
+  transition: all 0.2s ease;
+}
+
+#popmelt-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 12px 12px 24px rgba(163,177,198,0.50), -12px -12px 24px rgba(255,255,255,0.92);
+}
