@@ -1,7 +1,5 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Projects"
-    url: /projects/
-  - title: "CV"
+  - title: "CV (PDF)"
     url: "/assets/documents/btarver-cv-29012026.pdf"
