@@ -59,8 +59,6 @@ plugins:
 author:
   name   : "Benjamin Tarver"
   avatar : "/assets/images/bio-photo.png"
-  filter:
-    opacity: 1
   bio    : "Incoming Ph.D. candidate at NYU studying mechanical engineering and urban science for climate resilience."
   links:
     - label: "NYU Lab Website"
