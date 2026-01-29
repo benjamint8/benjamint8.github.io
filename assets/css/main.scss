@@ -72,25 +72,25 @@ body {
     @include strata-shadow-sm;
 }
 
-// Fix for sidebar avatar interactive state
-.sidebar .author__avatar a {
-    pointer-events: none !important;
-    cursor: default !important;
-}
-
-.sidebar .author__avatar img:hover {
-    // Force static state on hover
-    box-shadow: 8px 8px 16px rgba(163,177,198,0.45), -8px -8px 16px rgba(255,255,255,0.90) !important;
-    transform: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-}
-
+// // Fix for sidebar avatar interactive state
+// .sidebar .author__avatar a {
+//     pointer-events: none !important;
+//     cursor: default !important;
+// }
+//
+// .sidebar .author__avatar img:hover {
+//     // Force static state on hover
+//     box-shadow: 8px 8px 16px rgba(163,177,198,0.45), -8px -8px 16px rgba(255,255,255,0.90) !important;
+//     transform: none !important;
+//     filter: none !important;
+//     opacity: 1 !important;
+// }
+//
 // Ensure the profile image and content are always fully opaque
 .author__profile, .author__avatar img, .author__content {
     opacity: 1 !important;
     transition: none !important;
-}
+// }
 
 // Disable link behavior on the name/bio if wrapped in a link
 .author__content a {
@@ -106,29 +106,29 @@ body {
     border: 1px solid #F2F2F2 !important; // Strata 'border'
     font-weight: 500;
     transition: all 150ms ease-in-out; // Strata 'transition-fast'
-    
+
     // Default Button (Primary)
     &.btn--primary, &.btn--info, &.btn--success, &.btn--warning, &.btn--danger {
         background-color: #2F6BFF !important; // Strata 'primary'
         // Note: Strata button default is technically lighter with gradient, but MM uses primary for solid buttons.
         // Let's approximate Strata's "Default" button style which is actually white/gradient in the spec?
-        // Wait, spec says default button is: 
+        // Wait, spec says default button is:
         // bg: var(principles.primary) -> #FFFFFF
         // bg-image: linear-gradient(...)
         // color: primary-foreground -> #22324A
-        
+
         // Let's override .btn--primary to match Strata's "Default" button exactly.
         background: #FFFFFF !important;
         background-image: linear-gradient(145deg, #FFFFFF 0%, #E8EEF8 100%) !important;
         color: #22324A !important; // Strata primary-foreground
         @include strata-shadow-sm;
-        
+
         &:hover {
             filter: brightness(1.01);
             @include strata-shadow-md;
             color: #2F6BFF !important; // Adding color shift for visibility
         }
-        
+
         &:active {
             @include strata-shadow-inset;
             transform: translateY(1px);
@@ -166,7 +166,7 @@ input[type="text"], input[type="search"], textarea {
     box-shadow: inset 2px 2px 4px rgba(163,177,198,0.45), inset -2px -2px 4px rgba(255,255,255,0.85) !important; // Strata shadow-inset-xs
     color: #22324A !important;
     padding: 0.5rem 1rem !important;
-    
+
     &:focus {
          border-color: #2F6BFF !important;
          outline: none;
