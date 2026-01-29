@@ -17,7 +17,57 @@ permalink: /
     color: #2F6BFF; /* Strata primary */
     border-bottom: 1px solid #E2E8F2;
     padding-bottom: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
   }
+  .cv-header:hover {
+      opacity: 0.8;
+  }
+  .cv-header .toggle-icon {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #6A7A93;
+  }
+  .cv-content {
+      display: block; /* Default open */
+      transition: all 0.3s ease;
+  }
+  .cv-content.collapsed {
+      display: none;
+  }
+
+  /* Control Panel */
+  .control-panel {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+  }
+  .control-btn {
+      background: #FFFFFF;
+      background-image: linear-gradient(145deg, #FFFFFF 0%, #E8EEF8 100%);
+      border: 1px solid #F2F2F2;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+      font-family: "Outfit", sans-serif;
+      font-size: 0.875rem;
+      color: #22324A;
+      cursor: pointer;
+      box-shadow: 8px 8px 16px rgba(163,177,198,0.45), -8px -8px 16px rgba(255,255,255,0.90);
+      transition: all 0.2s ease;
+  }
+  .control-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 12px 12px 24px rgba(163,177,198,0.50), -12px -12px 24px rgba(255,255,255,0.92);
+      color: #2F6BFF;
+  }
+  .control-btn:active {
+      transform: translateY(1px);
+      box-shadow: inset 6px 6px 12px rgba(163,177,198,0.50), inset -6px -6px 12px rgba(255,255,255,0.88);
+  }
+
   .cv-card {
     background-color: #EEF3FA;
     padding: 1.5rem;
@@ -57,130 +107,174 @@ permalink: /
     </p>
 </header>
 
-<div class="cv-section">
-  <h2 class="cv-header">Education</h2>
+<div class="control-panel">
+    <button class="control-btn" id="expand-all">Expand All</button>
+    <button class="control-btn" id="collapse-all">Collapse All</button>
+</div>
 
-  <div class="cv-card">
-    <h3>New York University (NYU)</h3>
-    <span class="meta">Doctor of Philosophy in Mechanical Engineering with Urban Science concentration. | Ph.D. anticipated 2031</span>
+<div class="cv-section" id="education">
+  <h2 class="cv-header" onclick="toggleSection('education')">Education <span class="toggle-icon">−</span></h2>
+  
+  <div class="cv-content">
+    <div class="cv-card">
+        <h3>New York University (NYU)</h3>
+        <span class="meta">Doctor of Philosophy in Mechanical Engineering with Urban Science concentration. | Ph.D. anticipated 2031</span>
+    </div>
+
+    <div class="cv-card">
+        <h3>University of California San Diego (UCSD)</h3>
+        <span class="meta">Bachelor of Science in Mechanical Engineering | March 2025 | GPA: 3.98/4.00</span>
+        <ul>
+        <li>Minor in Climate Change Studies. Graduated Magna Cum Laude.</li>
+        <li><strong>Notable Coursework:</strong> Engineering Statistics, Experimental Techniques, Visualizing & Mapping Climate Changes with GIS, Physical Basis of Global Warming, Mathematical Physics, Computational Fluid Mechanics, Computational Methods in Engineering, Signals and Systems, Planning for Sustainable Communities, Environmental Racism, Democratizing the City, San Diego Community Research.</li>
+        </ul>
+    </div>
   </div>
+</div>
 
-  <div class="cv-card">
-    <h3>University of California San Diego (UCSD)</h3>
-    <span class="meta">Bachelor of Science in Mechanical Engineering | March 2025 | GPA: 3.98/4.00</span>
-    <ul>
-      <li>Minor in Climate Change Studies. Graduated Magna Cum Laude.</li>
-      <li><strong>Notable Coursework:</strong> Engineering Statistics, Experimental Techniques, Visualizing & Mapping Climate Changes with GIS, Physical Basis of Global Warming, Mathematical Physics, Computational Fluid Mechanics, Computational Methods in Engineering, Signals and Systems, Planning for Sustainable Communities, Environmental Racism, Democratizing the City, San Diego Community Research.</li>
+<div class="cv-section" id="experience">
+  <h2 class="cv-header" onclick="toggleSection('experience')">Work Experience <span class="toggle-icon">−</span></h2>
+
+  <div class="cv-content">
+    <div class="cv-card">
+        <h3>Research Assistant, Center for Energy Research</h3>
+        <span class="meta">La Jolla, CA | September 2022 - March 2025</span>
+        <ul>
+        <li>Developed automatic data collection pipeline using Python, Bash, and SQL to process, visualize, and publish live time series solar data to aid utility management.</li>
+        <li>Wrote, edited and created visualizations for particle-fluid dynamics research article.</li>
+        <li>Performed calculations and co-wrote a technical report in LaTeX to evaluate the solar water heating potential of UCSD dormitories, with findings used in the 2024 UCSD Decarbonization Study.</li>
+        <li>Tested and calibrated radiometers to quantify solar resources on the UCSD campus.</li>
+        </ul>
+    </div>
+
+    <div class="cv-card">
+        <h3>Research Intern, Swiss Federal Institute of Technology Lausanne (EPFL)</h3>
+        <span class="meta">Fribourg, CH | June - September 2024</span>
+        <ul>
+        <li>Processed and synthesized ten years of urban form, weather, and pedestrian data from 20+ sources.</li>
+        <li>Trained gradient-boosted tree machine learning models in Python to predict pedestrian behavior.</li>
+        <li>Leveraged game theory package in Python to investigate relative impacts of six categories of urban form features compared to miscellaneous factors on pedestrian activity in Melbourne city center.</li>
+        <li>Conducted frequency analysis of appliance power signatures to find acceptable sampling rates.</li>
+        </ul>
+    </div>
+
+    <div class="cv-card">
+        <h3>Laser Systems Engineering Intern, Lawrence Livermore Lab</h3>
+        <span class="meta">Livermore, CA | June - September 2023</span>
+        <ul>
+        <li>Developed scripts in Python to process and statistically analyze over 10 million damaged camera data points to correlate shutter speed and ambient temperature with image quality.</li>
+        <li>Designed experiment using heat transfer analysis and 3D modeling to determine if cold camera sensors accumulate significant radiation damage, with annual cost savings potential of >$200K.</li>
+        </ul>
+    </div>
+
+    <div class="cv-card">
+        <h3>Manufacturing Intern, Monarch Tractor</h3>
+        <span class="meta">Livermore, CA | June - September 2022</span>
+        <ul>
+        <li>Designed eight build fixtures using SOLIDWORKS for tractor system subassemblies.</li>
+        <li>Developed 2D drawings of fixtures in SOLIDWORKS to enable in-house part fabrication.</li>
+        <li>Researched and ordered components from online vendors to use in fixture prototypes.</li>
+        <li>Created ten mock wire harnesses in two days for tractor assembly trial runs.</li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<div class="cv-section" id="projects">
+  <h2 class="cv-header" onclick="toggleSection('projects')">Technical Projects <span class="toggle-icon">−</span></h2>
+
+  <div class="cv-content">
+    <div class="cv-card">
+        <h3>North Park Mobility Analysis Project</h3>
+        <span class="meta">San Diego, CA | January - March 2025</span>
+        <ul>
+        <li>Analyzed geographic distribution of essential services relative to residential buildings to characterize North Park neighborhood walkability using Python's GeoPandas and OSMnx.</li>
+        <li>Examined connectivity of bicycle infrastructure to illuminate safety gaps using OSMnx.</li>
+        <li>Conducted site visits to understand active mobility user experiences with current infrastructure.</li>
+        <li>Led question ideation and dissemination of survey asking neighborhood residents to qualitatively and quantitatively describe mobility infrastructure quality.</li>
+        <li>Co-wrote ~50 page report detailing past, present, and future of North Park mobility infrastructure.</li>
+        </ul>
+    </div>
+
+    <div class="cv-card">
+        <h3>Endoscopic Multiload Clip Applier Project</h3>
+        <span class="meta">La Jolla, CA | October 2024 - March 2025</span>
+        <ul>
+        <li>Designed pulley and reloadable cartridge mechanism subcomponents of robotically controlled blood vessel crimping device in SolidWorks.</li>
+        <li>Conducted numerical analyses of design component failure modes using MATLAB and Ansys.</li>
+        <li>Designed, conducted, and analyzed three physical experiments assessing prototype performance.</li>
+        <li>Led creation of ~60 page technical report for key stakeholders detailing project work performed.</li>
+        <li>Crafted and delivered five presentations to stakeholders detailing progress throughout the project.</li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<div class="cv-section" id="publications">
+  <h2 class="cv-header" onclick="toggleSection('publications')">Publications & Posters <span class="toggle-icon">−</span></h2>
+  <div class="cv-content">
+    <div class="cv-card">
+        <ul>
+        <li><strong>Kanaha Shoji, Benjamin Tarver, Andrew Sonta;</strong> Data-driven insights on urban walkability: Modeling the relationships between urban form and pedestrian activity. Submitted to <em>Cities: The International Journal of Urban Policy and Planning</em>. Preprint: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5290810">SSRN</a>.</li>
+        <li><strong>Omar AlAli, Benjamin Tarver, Carlos F. M. Coimbra;</strong> Particle response to oscillatory flows at finite Reynolds numbers. <em>Physics of Fluids</em> 1 October 2024, 36 (10): 103367. <a href="https://doi.org/10.1063/5.0229970">DOI</a>.</li>
+        <li><strong>(Poster) Kanaha Shoji, Benjamin Tarver, Andrew Sonta;</strong> Beyond theories of walkability: Using data to identify city-specific patterns and shared principles linking urban form and pedestrian mobility. Presented at the 19th International Conference on Computational Urban Planning and Urban Management, London, UK.</li>
     </ul>
   </div>
 </div>
 
-<div class="cv-section">
-  <h2 class="cv-header">Work Experience</h2>
-
-  <div class="cv-card">
-    <h3>Research Assistant, Center for Energy Research</h3>
-    <span class="meta">La Jolla, CA | September 2022 - March 2025</span>
-    <ul>
-      <li>Developed automatic data collection pipeline using Python, Bash, and SQL to process, visualize, and publish live time series solar data to aid utility management.</li>
-      <li>Wrote, edited and created visualizations for particle-fluid dynamics research article.</li>
-      <li>Performed calculations and co-wrote a technical report in LaTeX to evaluate the solar water heating potential of UCSD dormitories, with findings used in the 2024 UCSD Decarbonization Study.</li>
-      <li>Tested and calibrated radiometers to quantify solar resources on the UCSD campus.</li>
-    </ul>
-  </div>
-
-  <div class="cv-card">
-    <h3>Research Intern, Swiss Federal Institute of Technology Lausanne (EPFL)</h3>
-    <span class="meta">Fribourg, CH | June - September 2024</span>
-    <ul>
-      <li>Processed and synthesized ten years of urban form, weather, and pedestrian data from 20+ sources.</li>
-      <li>Trained gradient-boosted tree machine learning models in Python to predict pedestrian behavior.</li>
-      <li>Leveraged game theory package in Python to investigate relative impacts of six categories of urban form features compared to miscellaneous factors on pedestrian activity in Melbourne city center.</li>
-      <li>Conducted frequency analysis of appliance power signatures to find acceptable sampling rates.</li>
-    </ul>
-  </div>
-
-  <div class="cv-card">
-    <h3>Laser Systems Engineering Intern, Lawrence Livermore Lab</h3>
-    <span class="meta">Livermore, CA | June - September 2023</span>
-    <ul>
-      <li>Developed scripts in Python to process and statistically analyze over 10 million damaged camera data points to correlate shutter speed and ambient temperature with image quality.</li>
-      <li>Designed experiment using heat transfer analysis and 3D modeling to determine if cold camera sensors accumulate significant radiation damage, with annual cost savings potential of >$200K.</li>
-    </ul>
-  </div>
-
-  <div class="cv-card">
-    <h3>Manufacturing Intern, Monarch Tractor</h3>
-    <span class="meta">Livermore, CA | June - September 2022</span>
-    <ul>
-      <li>Designed eight build fixtures using SOLIDWORKS for tractor system subassemblies.</li>
-      <li>Developed 2D drawings of fixtures in SOLIDWORKS to enable in-house part fabrication.</li>
-      <li>Researched and ordered components from online vendors to use in fixture prototypes.</li>
-      <li>Created ten mock wire harnesses in two days for tractor assembly trial runs.</li>
+<div class="cv-section" id="skills">
+  <h2 class="cv-header" onclick="toggleSection('skills')">Skills <span class="toggle-icon">−</span></h2>
+  <div class="cv-content">
+    <div class="cv-card">
+        <ul>
+        <li>Deploying statistical tools and machine learning models to illuminate patterns in large datasets (NumPy, pandas, scikit-learn).</li>
+        <li>Creating automated data preparation, analysis, and visualization pipelines in Linux using SQL and Grafana.</li>
+        <li>Processing geospatial datasets using Python's GeoPandas, Shapely, and OSMnx libraries.</li>
+        <li>Conducting literature reviews and synthesizing information from multidisciplinary academic journals.</li>
+        <li>Technical writing and creating visualizations for research articles.</li>
+        <li>Communicating actionable information across stakeholder groups.</li>
     </ul>
   </div>
 </div>
 
-<div class="cv-section">
-  <h2 class="cv-header">Technical Projects</h2>
-
-  <div class="cv-card">
-    <h3>North Park Mobility Analysis Project</h3>
-    <span class="meta">San Diego, CA | January - March 2025</span>
-    <ul>
-      <li>Analyzed geographic distribution of essential services relative to residential buildings to characterize North Park neighborhood walkability using Python's GeoPandas and OSMnx.</li>
-      <li>Examined connectivity of bicycle infrastructure to illuminate safety gaps using OSMnx.</li>
-      <li>Conducted site visits to understand active mobility user experiences with current infrastructure.</li>
-      <li>Led question ideation and dissemination of survey asking neighborhood residents to qualitatively and quantitatively describe mobility infrastructure quality.</li>
-      <li>Co-wrote ~50 page report detailing past, present, and future of North Park mobility infrastructure.</li>
-    </ul>
-  </div>
-
-  <div class="cv-card">
-    <h3>Endoscopic Multiload Clip Applier Project</h3>
-    <span class="meta">La Jolla, CA | October 2024 - March 2025</span>
-    <ul>
-      <li>Designed pulley and reloadable cartridge mechanism subcomponents of robotically controlled blood vessel crimping device in SolidWorks.</li>
-      <li>Conducted numerical analyses of design component failure modes using MATLAB and Ansys.</li>
-      <li>Designed, conducted, and analyzed three physical experiments assessing prototype performance.</li>
-      <li>Led creation of ~60 page technical report for key stakeholders detailing project work performed.</li>
-      <li>Crafted and delivered five presentations to stakeholders detailing progress throughout the project.</li>
+<div class="cv-section" id="awards">
+  <h2 class="cv-header" onclick="toggleSection('awards')">Awards <span class="toggle-icon">−</span></h2>
+  <div class="cv-content">
+    <div class="cv-card">
+        <ul>
+        <li><strong>Department of Mechanical and Aerospace Engineering Undergraduate Student Award of Excellence (2025)</strong>: Awarded to three students out of 260-person graduating class.</li>
+        <li><strong>Excellence Research Internship Program Scholarship (2024)</strong>: Awarded monthly stipend of 1,600 CHF for three months of research activity at EPFL.</li>
+        <li><strong>UC San Diego IDEA Scholar (2021)</strong>: Awarded $1,000 for writing an essay about commitment to improving inclusion and diversity in engineering.</li>
     </ul>
   </div>
 </div>
 
-<div class="cv-section">
-  <h2 class="cv-header">Publications & Posters</h2>
-  <div class="cv-card">
-    <ul>
-      <li><strong>Kanaha Shoji, Benjamin Tarver, Andrew Sonta;</strong> Data-driven insights on urban walkability: Modeling the relationships between urban form and pedestrian activity. Submitted to <em>Cities: The International Journal of Urban Policy and Planning</em>. Preprint: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5290810">SSRN</a>.</li>
-      <li><strong>Omar AlAli, Benjamin Tarver, Carlos F. M. Coimbra;</strong> Particle response to oscillatory flows at finite Reynolds numbers. <em>Physics of Fluids</em> 1 October 2024, 36 (10): 103367. <a href="https://doi.org/10.1063/5.0229970">DOI</a>.</li>
-      <li><strong>(Poster) Kanaha Shoji, Benjamin Tarver, Andrew Sonta;</strong> Beyond theories of walkability: Using data to identify city-specific patterns and shared principles linking urban form and pedestrian mobility. Presented at the 19th International Conference on Computational Urban Planning and Urban Management, London, UK.</li>
-    </ul>
-  </div>
-</div>
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const content = section.querySelector('.cv-content');
+        const icon = section.querySelector('.toggle-icon');
+        
+        if (content.classList.contains('collapsed')) {
+            content.classList.remove('collapsed');
+            icon.innerText = '−';
+        } else {
+            content.classList.add('collapsed');
+            icon.innerText = '+';
+        }
+    }
 
-<div class="cv-section">
-  <h2 class="cv-header">Skills</h2>
-  <div class="cv-card">
-    <ul>
-      <li>Deploying statistical tools and machine learning models to illuminate patterns in large datasets (NumPy, pandas, scikit-learn).</li>
-      <li>Creating automated data preparation, analysis, and visualization pipelines in Linux using SQL and Grafana.</li>
-      <li>Processing geospatial datasets using Python's GeoPandas, Shapely, and OSMnx libraries.</li>
-      <li>Conducting literature reviews and synthesizing information from multidisciplinary academic journals.</li>
-      <li>Technical writing and creating visualizations for research articles.</li>
-      <li>Communicating actionable information across stakeholder groups.</li>
-    </ul>
-  </div>
-</div>
+    document.getElementById('expand-all').addEventListener('click', function() {
+        const contents = document.querySelectorAll('.cv-content');
+        const icons = document.querySelectorAll('.toggle-icon');
+        contents.forEach(el => el.classList.remove('collapsed'));
+        icons.forEach(el => el.innerText = '−');
+    });
 
-<div class="cv-section">
-  <h2 class="cv-header">Awards</h2>
-  <div class="cv-card">
-    <ul>
-      <li><strong>Department of Mechanical and Aerospace Engineering Undergraduate Student Award of Excellence (2025)</strong>: Awarded to three students out of 260-person graduating class.</li>
-      <li><strong>Excellence Research Internship Program Scholarship (2024)</strong>: Awarded monthly stipend of 1,600 CHF for three months of research activity at EPFL.</li>
-      <li><strong>UC San Diego IDEA Scholar (2021)</strong>: Awarded $1,000 for writing an essay about commitment to improving inclusion and diversity in engineering.</li>
-    </ul>
-  </div>
-</div>
+    document.getElementById('collapse-all').addEventListener('click', function() {
+        const contents = document.querySelectorAll('.cv-content');
+        const icons = document.querySelectorAll('.toggle-icon');
+        contents.forEach(el => el.classList.add('collapsed'));
+        icons.forEach(el => el.innerText = '+');
+    });
+</script>

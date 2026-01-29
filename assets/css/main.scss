@@ -74,8 +74,8 @@ body {
 
 // Fix for sidebar avatar interactive state
 .sidebar .author__avatar a {
-    pointer-events: none;
-    cursor: default;
+    pointer-events: none !important;
+    cursor: default !important;
 }
 
 .sidebar .author__avatar img:hover {
@@ -83,6 +83,21 @@ body {
     box-shadow: 8px 8px 16px rgba(163,177,198,0.45), -8px -8px 16px rgba(255,255,255,0.90) !important;
     transform: none !important;
     filter: none !important;
+    opacity: 1 !important;
+}
+
+// Ensure the profile image and content are always fully opaque
+.author__profile, .author__avatar img, .author__content {
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+// Disable link behavior on the name/bio if wrapped in a link
+.author__content a {
+    text-decoration: none !important;
+    color: inherit !important;
+    pointer-events: none !important;
+    cursor: default !important;
 }
 
 // Buttons (.btn)
