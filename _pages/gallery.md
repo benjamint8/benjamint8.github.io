@@ -46,17 +46,65 @@ author_profile: true
 </style>
 
 <div class="gallery-grid">
-  <!-- Example Item 1 -->
+
   <div class="gallery-item">
-    <img src="/assets/images/bio-photo.png" alt="Project Placeholder 1">
-    <div class="gallery-caption">Project Alpha Visualization</div>
+    <img src="/assets/images/grafana.png" alt="Grafana Weather Readings">
+    <div class="gallery-caption">Snapshot of Grafana website I created to track meteorological data from instruments on UC San Diego's campus.</div>
   </div>
 
-  <!-- Example Item 2 -->
   <div class="gallery-item">
-    <img src="/assets/images/bio-photo.png" alt="Project Placeholder 2">
-    <div class="gallery-caption">Simulation Result</div>
+    <img src="/assets/images/shap.jpeg" alt="SHAP Chart">
+    <div class="gallery-caption">SHAP importance chart I created to assess urban form feature importance for predicting pedestrian activity.</div>
   </div>
 
-  <!-- Add more .gallery-item blocks here -->
+  <div class="gallery-item">
+    <img src="/assets/images/clipper-prototype.png" alt="Clipper Prototype">
+    <div class="gallery-caption">Assembled prototype of endoscopic multiload clip applier I collaborated in designing and manufacturing.</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/assets/images/northpark.png" alt="North Park Maps">
+    <div class="gallery-caption">GIS graphic I created showing amenity access for each household in San Diego's North Park neighborhood.</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/assets/images/phase.pdf" alt="Phase Graph">
+    <div class="gallery-caption">Graph I created showing phase offsets of particles in an oscillatory fluid based on relative density and speed.</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/assets/images/solar-equipment.png" alt="Solar Equipment">
+    <div class="gallery-caption">Physical installation of meteorological instruments I maintained at UC San Diego.</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/assets/images/ach-sim.gif" alt="ACH Simulation">
+    <div class="gallery-caption">Simulation I collaborated to create for an undergraduate fluids course of air circulation in a classroom.</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/assets/images/sub-dive-min.gif" alt="Submarine Dive">
+    <div class="gallery-caption">Demonstration of open-ocean diving capability for underwater research vehicle I manufactured parts for.</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/assets/images/autobreaking-min.gif" alt="Auto-Breaking Mechanism">
+    <div class="gallery-caption">Demonstration of breaking behavior I programmed for a model wind turbine rotor.</div>
+  </div>  
+
+  <div class="gallery-item">
+    <img src="/assets/images/kinematic-experiment.jpg" alt="Kinematic Experiment">
+    <div class="gallery-caption">Miniature cannon fabricated and assembled for an  undergraduate machining class.</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/assets/images/best-boy.jpg" alt="Best Boy">
+    <div class="gallery-caption">Full image version of website favicon.</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="/assets/images/hose.jpeg" alt="Hose Play">
+    <div class="gallery-caption">Little dude really loves playing with the hose!</div>
+  </div>
+
 </div>
