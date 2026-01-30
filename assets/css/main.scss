@@ -59,6 +59,14 @@ body {
     color: $primary-color; // Strata Icons
 }
 
+// Increase author avatar size on mobile
+@media (max-width: 768px) {
+  .author__avatar img {
+    max-width: 120px;
+    width: 120px;
+  }
+}
+
 .sidebar {
     background-color: #E5EBF4; // Strata 'sidebar'
     border-radius: 1rem;       // Strata 'radius'
@@ -71,6 +79,14 @@ body {
     border-radius: 1rem; // Strata radius
     @include strata-shadow-sm;
 }
+
+// Force sidebar to always remain fully opaque
+.sidebar,
+.sidebar * {
+  opacity: 1 !important;
+  transition: none !important;
+}
+
 
 // Buttons (.btn)
 .btn {
