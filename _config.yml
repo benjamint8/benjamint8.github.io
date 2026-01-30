@@ -26,6 +26,9 @@ search: false
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
@@ -35,6 +38,8 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
+
+{% include sidebar-author.html %}
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -63,8 +68,9 @@ author:
   avatar : "/assets/images/bio-photo.png"
   bio    : "Incoming Ph.D. candidate at NYU studying mechanical engineering and urban science for climate resilience."
   links:
-    - label: ["NYU Lab Website"](https://yukimiura.org){:target="_blank" rel="noopener noreferrer"}
+    - label: "NYU Lab Website"
       icon: "fas fa-fw fa-link"
+      url: "https://yukimiura.org"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/benjamin-tarver/"
