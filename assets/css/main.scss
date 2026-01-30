@@ -59,11 +59,19 @@ body {
     color: $primary-color; // Strata Icons
 }
 
-@media (max-width: 768px) and (max-width: 1023px){
+// Fix avatar sizing for mobile and tablets.
+@media (max-width: 768px){
   .author__avatar img {
     min-width: 60px;
     width: 100%;
     height: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .author__avatar img {
+    width: 120px;
+    max-width: 120px;
   }
 }
 
