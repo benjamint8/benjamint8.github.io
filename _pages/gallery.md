@@ -68,8 +68,8 @@ author_profile: true
   </div>
 
   <div class="gallery-item">
-    <img src="/assets/images/phase.pdf" alt="Phase Graph">
-    <div class="gallery-caption">Graph I created showing phase offsets of particles in an oscillatory fluid based on relative density and speed.</div>
+    <img src="/assets/images/amp-phase.png" alt="Amplitude Phase Graph">
+    <div class="gallery-caption">Graph I created showing amplitude and phase offsets of particles in an oscillatory fluid based on relative density and frequency.</div>
   </div>
 
   <div class="gallery-item">
