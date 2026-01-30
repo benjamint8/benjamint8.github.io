@@ -9,4 +9,4 @@ Relationally speaking, I'm the son of [Dr. James Tarver](https://www.linkedin.co
 
 In my free time, I enjoy cooking vegetarian meals, playing puzzle games and narrative-centric RPGs, walking long distances through interesting (land/city)scapes, and reading anything with a compelling premise.
 
-If you would like to get in touch, please feel free to contact me via [email](mailto:benjamin.tarver@nyu.edu).
+If you would like to get in touch, please feel free to contact me via email: firstName [dot] lastName [at] nyu [dot] edu.
