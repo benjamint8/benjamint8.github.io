@@ -59,7 +59,7 @@ body {
     color: $primary-color; // Strata Icons
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (max-width: 1023px){
   .author__avatar img {
     min-width: 60px;
     width: 100%;
