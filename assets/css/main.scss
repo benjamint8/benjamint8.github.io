@@ -78,6 +78,7 @@ body {
     cursor: default !important;
 }
 
+.sidebar .author__avatar:hover img,
 .sidebar .author__avatar img:hover {
     // Force static state on hover
     box-shadow: 8px 8px 16px rgba(163,177,198,0.45), -8px -8px 16px rgba(255,255,255,0.90) !important;
@@ -92,7 +93,11 @@ body {
 .author__avatar,
 .author__avatar img,
 .author__profile,
-.author__content {
+.author__content,
+.author__urls.social-icons,
+.author__urls.social-icons .svg-inline--fa,
+.author__urls.social-icons .fab,
+.author__urls.social-icons .fas {
     opacity: 1 !important;
     filter: none !important;
     -webkit-filter: none !important;

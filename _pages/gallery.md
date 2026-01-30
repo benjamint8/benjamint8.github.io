@@ -32,6 +32,8 @@ author_profile: true
   height: auto;
   border-radius: 0.75rem;
   display: block;
+  opacity: 1 !important;
+  filter: none !important;
 }
 
 .gallery-caption {
