@@ -62,12 +62,14 @@ body {
 @media (max-width: 768px) {
   .author__avatar img {
     min-width: 60px;
+    width: 100%;
+    height: auto;
   }
 }
 
 .sidebar {
     background-color: #E5EBF4; // Strata 'sidebar'
-    border-radius: 1rem;       // Strata 'radius'
+    border-radius: 5rem;       // Strata 'radius'
     // Usually sidebar in MM is transparent, let's card-ify it slightly if needed,
     // or just let the content pop.
     // For Strata, we want soft containers.
