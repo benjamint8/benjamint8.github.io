@@ -69,7 +69,8 @@ body {
 
 .sidebar {
     background-color: #E5EBF4; // Strata 'sidebar'
-    border-radius: 5rem;       // Strata 'radius'
+    border-radius: 1rem;       // Strata 'radius'
+    padding: 5px;
     // Usually sidebar in MM is transparent, let's card-ify it slightly if needed,
     // or just let the content pop.
     // For Strata, we want soft containers.
