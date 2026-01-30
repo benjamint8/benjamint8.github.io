@@ -1,7 +1,2 @@
-{% for link in site.author.links %}
-  <a href="{{ link.url }}" class="author-link" target="_blank" rel="noopener">
-    {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
-    {{ link.label }}
-  </a>
-{% endfor %}
+{% include author-custom.html %}
 

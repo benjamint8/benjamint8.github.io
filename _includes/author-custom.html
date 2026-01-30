@@ -1,0 +1,29 @@
+<div class="author-card">
+  <!-- Avatar -->
+  {% if site.author.avatar %}
+    <img class="author-avatar" src="{{ site.author.avatar | absolute_url }}" alt="{{ site.author.name }}">
+  {% endif %}
+
+  <!-- Name and Bio -->
+  <h3 class="author-name">{{ site.author.name }}</h3>
+  {% if site.author.bio %}
+    <p class="author-bio">{{ site.author.bio }}</p>
+  {% endif %}
+
+  <!-- Social / Links -->
+  {% if site.author.links %}
+    <ul class="author-links">
+      {% for link in site.author.links %}
+        <li>
+          <a href="{{ link.url }}" target="_blank" rel="noopener" class="author-link">
+            {% if link.icon %}
+              <i class="{{ link.icon }}"></i>
+            {% endif %}
+            {{ link.label }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+
