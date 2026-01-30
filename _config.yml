@@ -63,9 +63,8 @@ author:
   avatar : "/assets/images/bio-photo.png"
   bio    : "Incoming Ph.D. candidate at NYU studying mechanical engineering and urban science for climate resilience."
   links:
-    - label: "NYU Lab Website"
+    - label: ["NYU Lab Website"](https://yukimiura.org){:target="_blank" rel="noopener noreferrer"}
       icon: "fas fa-fw fa-link"
-      url: "https://yukimiura.org"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/benjamin-tarver/"
